@@ -18,7 +18,7 @@ func apiResponse(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`{"message":"POST method requested"}`))
 	default:
 		w.WriteHeader(http.StatusNotFound)
-		w.Write()
+		w.Write([]byte(`{"message": "Can't find method requested"}`))
 
 	}
 	w.Write([]byte(`{"message":"hello world!"}`))
