@@ -12,14 +12,16 @@ func suma(a int, b int) {
 
 }
 
-func (c *coche) puertas() int {
-	i := 4
-	c.numPuertas = i + 1
+func puertas(c *coche) int {
+	(*c).numPuertas += 1
 	return c.numPuertas
 }
 
 func main() {
+	c := coche{}
+	puertas(&c)
+	fmt.Println(c)
+
 	suma(10, 20)
-	fmt.Println()
 
 }
